@@ -14,7 +14,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 121459377
+              "duration": 90508144
             }
           },
           {
@@ -27,7 +27,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 828803692
+              "duration": 1396282622
             }
           },
           {
@@ -40,7 +40,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 219432615
+              "duration": 259945363
             }
           },
           {
@@ -53,7 +53,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 55492922
+              "duration": 34738698
             }
           },
           {
@@ -66,7 +66,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 46403632
+              "duration": 15030237
             }
           },
           {
@@ -74,7 +74,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 301195197
+              "duration": 476308552
             }
           }
         ],
@@ -93,7 +93,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 106803907
+              "duration": 98554767
             }
           },
           {
@@ -106,7 +106,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 519626230
+              "duration": 1246043485
             }
           },
           {
@@ -119,7 +119,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 328931495
+              "duration": 489770815
             }
           },
           {
@@ -132,7 +132,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 515266924
+              "duration": 405756155
             }
           },
           {
@@ -140,7 +140,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 219927562
+              "duration": 145306542
             }
           }
         ],
@@ -162,111 +162,6 @@
         "description": "",
         "id": "user-authentication-login-fail;login-should-not-be-success",
         "keyword": "Scenario Outline",
-        "line": 16,
-        "name": "Login should not be success",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 97081979
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 4,
-            "name": "User navigates to the application",
-            "match": {
-              "location": "tests/steps/login-fail.steps.ts:5"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 994049327
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 5,
-            "name": "User click on the sign in button",
-            "match": {
-              "location": "tests/steps/login-fail.steps.ts:10"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 367283056
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 8,
-            "name": "User enter the username as \"test2@gmail.com\"",
-            "match": {
-              "location": "tests/steps/login-fail.steps.ts:14"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 225434429
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 9,
-            "name": "User enter the password as \"32112312312\"",
-            "match": {
-              "location": "tests/steps/login-fail.steps.ts:18"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 53977749
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 10,
-            "name": "User click on the login button",
-            "match": {
-              "location": "tests/steps/login-fail.steps.ts:22"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2061388246
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "But ",
-            "line": 11,
-            "name": "Login should be failed",
-            "match": {
-              "location": "tests/steps/login-fail.steps.ts:28"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 11513523
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 145090532
-            }
-          }
-        ],
-        "tags": [],
-        "type": "scenario"
-      },
-      {
-        "description": "",
-        "id": "user-authentication-login-fail;login-should-not-be-success",
-        "keyword": "Scenario Outline",
         "line": 15,
         "name": "Login should not be success",
         "steps": [
@@ -275,7 +170,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 109534388
+              "duration": 105737493
             }
           },
           {
@@ -288,7 +183,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 542548833
+              "duration": 1483017212
             }
           },
           {
@@ -301,7 +196,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 360156097
+              "duration": 362766813
             }
           },
           {
@@ -314,7 +209,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 120373611
+              "duration": 154414634
             }
           },
           {
@@ -327,7 +222,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 43164543
+              "duration": 64032667
             }
           },
           {
@@ -340,7 +235,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2145701408
+              "duration": 2155268900
             }
           },
           {
@@ -353,7 +248,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 12077318
+              "duration": 16796251
             }
           },
           {
@@ -361,7 +256,112 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 158016927
+              "duration": 193257852
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "user-authentication-login-fail;login-should-not-be-success",
+        "keyword": "Scenario Outline",
+        "line": 16,
+        "name": "Login should not be success",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 87236161
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "User navigates to the application",
+            "match": {
+              "location": "tests/steps/login-fail.steps.ts:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1290054376
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 5,
+            "name": "User click on the sign in button",
+            "match": {
+              "location": "tests/steps/login-fail.steps.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 435585959
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "User enter the username as \"test2@gmail.com\"",
+            "match": {
+              "location": "tests/steps/login-fail.steps.ts:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 160306844
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 9,
+            "name": "User enter the password as \"32112312312\"",
+            "match": {
+              "location": "tests/steps/login-fail.steps.ts:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 84062594
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 10,
+            "name": "User click on the login button",
+            "match": {
+              "location": "tests/steps/login-fail.steps.ts:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2140020256
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "But ",
+            "line": 11,
+            "name": "Login should be failed",
+            "match": {
+              "location": "tests/steps/login-fail.steps.ts:28"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10501903
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 134529818
             }
           }
         ],
