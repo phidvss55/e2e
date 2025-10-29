@@ -1,8 +1,6 @@
-import { Given, setDefaultTimeout, Then, When } from '@cucumber/cucumber';
+import { Given, Then, When } from '@cucumber/cucumber';
 import { expect } from '@playwright/test';
-import { pageFixture } from '../../tests/utils/pageFixture';
-
-setDefaultTimeout(60 * 1000);
+import { pageFixture } from '../common/pageFixture';
 
 Given('User navigates to the Homepage', async function () {
   const base_url = process.env.BASE_URL || 'http://localhost:3000';
@@ -38,6 +36,4 @@ Then('It should lead user to the product details page', async function () {
   await pageFixture.page.getByRole('button', { name: 'Add to Cart', exact: true }).click();
 
   await expect(pageFixture.page.locator('div').filter({ hasText: /^Sign in$/ })).toBeVisible();
-
-  // await browser.close();
 });

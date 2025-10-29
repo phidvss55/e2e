@@ -1,8 +1,6 @@
-import { Given, setDefaultTimeout, Then, When } from '@cucumber/cucumber';
+import { Given, Then, When } from '@cucumber/cucumber';
 import { expect } from '@playwright/test';
-import { pageFixture } from '../utils/pageFixture';
-
-setDefaultTimeout(60 * 1000);
+import { pageFixture } from '../common/pageFixture';
 
 Given('User navigates to the application', async function () {
   const base_url = process.env.BASE_URL || 'http://localhost:3000';
@@ -28,9 +26,6 @@ When('User click on the login button', async function () {
 });
 
 Then('Login should be failed', async function () {
-  // await pageFixture.page.screenshot({ path: './test-results/login-fail.png' });
-  // await pageFixture.page.getByTestId('login-error').waitFor();
-  // await expect(pageFixture.page.getByTestId('login-error')).toContainText('Invalid email or password');
   await expect(pageFixture.page.locator('div').filter({ hasText: /^Invalid email or password$/ })).toBeVisible();
 
   pageFixture.logger.info('Login should be failed');

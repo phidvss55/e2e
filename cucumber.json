@@ -3,8 +3,8 @@
     "dryRun": false,
     "publishQuite": true,
     "paths": ["tests/features"],
-    "require": ["tests/steps/*.ts", "tests/utils/hooks.ts"],
-    "requireModule": ["ts-node/register"],
+    "require": ["tests/steps/*.ts", "tests/common/hooks.ts"],
+    "requireModule": ["ts-node/register", "tsconfig-paths/register"],
     "formatOptions": {
       "colorsEnabled": true,
       "snippetInterface": "async-await"

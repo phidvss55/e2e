@@ -1,11 +1,11 @@
 import { expect, Page } from '@playwright/test';
-import PlaywrightWrapper from './playwright-wrapper';
+import { BasePage } from '../basePage';
 
 export default class LoginPage {
-  base: PlaywrightWrapper;
+  base: BasePage;
 
   constructor(private readonly page: Page) {
-    this.base = new PlaywrightWrapper(page);
+    this.base = new BasePage(page);
   }
 
   private readonly Elements = {

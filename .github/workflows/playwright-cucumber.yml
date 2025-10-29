@@ -1,0 +1,110 @@
+name: Playwright Cucumber Automation
+run-name: Run Playwright Cucumber Automation
+
+on:
+  workflow_dispatch:
+    inputs:
+      # JIRA_ISSUE_KEY:
+      #   description: 'Jira Issue Key'
+      #   required: true
+      # default: 'BKM5-346'
+      ENVIRONMENT:
+        description: 'ENVIRONMENT: TEST or STG'
+        required: true
+        default: 'test'
+    # pull_request:
+    #   types: [opened, synchronize, reopened]
+  push:
+    branches: [master]
+
+jobs:
+  playwright-run:
+    runs-on: ubuntu-latest
+    env:
+      ENVIRONMENT: ${{ github.event.inputs.ENVIRONMENT }}
+      # JIRA_ISSUE_KEY: ${{ github.event.inputs.JIRA_ISSUE_KEY }}
+      USERNAME: ${{ secrets.USERNAME }}
+      PASSWORD: ${{ secrets.PASSWORD }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use NodeJS v22.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+
+      - name: Install Package Dependencies
+        run: npm install -g pnpm && pnpm install --frozen-lockfile
+
+      # - name: Install Playwright Chromium Only
+      #   run: npx playwright install chromium
+
+      - name: Install Playwright dependencies
+        run: pnpm exec playwright install --with-deps
+
+      - name: Run Playwright tests
+        run: pnpm run test
+
+      - name: Upload Artifact
+        # if: always()
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          # name: report-and-videos
+          # path: reports
+          name: test-results
+          path: test-results/
+          retention-days: 2
+
+      - name: Rename Report to index.html
+        if: always()
+        run: mv test-results/cucumber-report.html test-results/index.html
+
+      - name: Deploy to GitHub Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-page
+          publish_dir: test-results/
+
+      # - name: Post Comment to Jira
+      #   if: always()
+      #   env:
+      #     JIRA_USERNAME: ${{ secrets.JIRA_USERNAME }}
+      #     JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+      #     JIRA_URL: ${{ secrets.JIRA_URL }}
+      #     JIRA_ISSUE_KEY: ${{ github.event.inputs.JIRA_ISSUE_KEY }}
+      #     GITHUB_RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+      #   run: npx ts-node ./scripts/post-comment.ts
+
+      # - name: Upload result to Xray
+      #   if: always()
+      #   env:
+      #     JIRA_ISSUE_KEY: ${{ github.event.inputs.JIRA_ISSUE_KEY }}
+      #     XRAY_CLIENT_ID: ${{ secrets.XRAY_CLIENT_ID }}
+      #     XRAY_CLIENT_SECRET: ${{ secrets.XRAY_CLIENT_SECRET }}
+      #   run: |
+      #     if [ -n "${{ github.event.inputs.JIRA_ISSUE_KEY }}" ]; then
+      #     npx ts-node scripts/upload-test-result-to-xray.ts
+      #     else
+      #      echo "JIRA Issue Key is missing. Skipping sync to Xray."
+      #      fi
+
+      # - name: Send Google Chat Notification
+      #   if: always()
+      #   env:
+      #     JIRA_ISSUE_KEY: ${{ github.event.inputs.JIRA_ISSUE_KEY }}
+      #     GITHUB_RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+      #     GOOGLE_CHAT_WEBHOOK_URL: ${{ secrets.GOOGLE_CHAT_WEBHOOK_URL }}
+      #   run: |
+      #     if [ -n "${{ github.event.inputs.JIRA_ISSUE_KEY }}" ]; then
+      #     npx ts-node scripts/post-comment-gg-chat.ts
+      #     else
+      #      echo "JIRA Issue Key is missing. Skipping Google Chat notification."
+      #      fi
+
+      # - name: Add Report Link to Summary
+      #   if: always()
+      #   run: echo "[View Cucumber Report](https://literate-doodle-z2y9w9k.pages.github.io/)" >> $GITHUB_STEP_SUMMARY

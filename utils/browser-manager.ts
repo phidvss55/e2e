@@ -1,4 +1,7 @@
+import { setDefaultTimeout } from '@cucumber/cucumber';
 import { LaunchOptions, chromium, firefox, webkit } from '@playwright/test';
+
+setDefaultTimeout(60 * 1000);
 
 export const invokeBrowser = () => {
   const options: LaunchOptions = {

@@ -1,5 +1,5 @@
-import { expect, Page } from "@playwright/test";
-import PlaywrightWrapper from "./playwright-wrapper";
+import { expect, Page } from '@playwright/test';
+import PlaywrightWrapper from './playwright-wrapper';
 
 export default class RegisterPage {
   private base: PlaywrightWrapper;
@@ -8,7 +8,7 @@ export default class RegisterPage {
     this.base = new PlaywrightWrapper(page);
   }
 
-  private Elements = {
+  private readonly Elements = {
     fName: "input[formcontrolname='firstname']",
     lname: "input[formcontrolname='lastname']",
     userName: "input[formcontrolname='username']",
@@ -18,11 +18,11 @@ export default class RegisterPage {
     femaleInput: "input[value='Female']",
     maleRadioBtn: "//span[contains(text(),'Male')]",
     femaleRadioBtn: "//span[contains(text(),'Female')]",
-    regBtn: "button[color='primary']",
+    regBtn: "button[color='primary']"
   };
 
   async navigateToRegisterPage() {
-    await this.base.goto("http://localhost:3000/auth/signup");
+    await this.base.goto('http://localhost:3000/auth/signup');
   }
 
   async registerUser(
@@ -39,7 +39,7 @@ export default class RegisterPage {
     await this.enterUsername(userName);
     await this.page.type(this.Elements.password, password);
     await this.page.type(this.Elements.confirmPassword, confirmPassword);
-    if (gender == "m") {
+    if (gender == 'm') {
       await this.page.click(this.Elements.maleRadioBtn);
       await expect(this.page.locator(this.Elements.maleInput)).toBeChecked();
     } else {
@@ -55,11 +55,9 @@ export default class RegisterPage {
     const [response] = await Promise.all([
       this.page.waitForResponse((res) => {
         return (
-          res.status() == 200 &&
-          res.url() ==
-            `https://bookcart.azurewebsites.net/api/user/validateUserName/${userName}`
+          res.status() == 200 && res.url() == `https://bookcart.azurewebsites.net/api/user/validateUserName/${userName}`
         );
-      }),
+      })
     ]);
     await response.finished();
   }
