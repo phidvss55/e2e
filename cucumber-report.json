@@ -1,0 +1,379 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "homepage-functionality;verify-correct-ui",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Verify correct UI",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 118100676
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "User navigates to the Homepage",
+            "match": {
+              "location": "tests/steps/homepage.steps.ts:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 595196384
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 5,
+            "name": "It should show all products",
+            "match": {
+              "location": "tests/steps/homepage.steps.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 277026923
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 6,
+            "name": "I could see the Products title",
+            "match": {
+              "location": "tests/steps/homepage.steps.ts:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 58068389
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I could see the page description",
+            "match": {
+              "location": "tests/steps/homepage.steps.ts:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 17766678
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 334124469
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "homepage-functionality;verify-product-is-clickable",
+        "keyword": "Scenario",
+        "line": 9,
+        "name": "Verify product is clickable",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 139849054
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 10,
+            "name": "User Navigates to Browserstack Homepage",
+            "match": {
+              "location": "tests/steps/homepage.steps.ts:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 528017854
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 11,
+            "name": "User clicks on product card",
+            "match": {
+              "location": "tests/steps/homepage.steps.ts:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 402837850
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 12,
+            "name": "It should lead user to the product details page",
+            "match": {
+              "location": "tests/steps/homepage.steps.ts:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 429767055
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 133659595
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "homepage-functionality",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Homepage Functionality",
+    "tags": [],
+    "uri": "tests/features/homepage.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "user-authentication-login-fail;login-should-not-be-success",
+        "keyword": "Scenario Outline",
+        "line": 15,
+        "name": "Login should not be success",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 101342325
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "User navigates to the application",
+            "match": {
+              "location": "tests/steps/login-fail.steps.ts:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 646951210
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 5,
+            "name": "User click on the sign in button",
+            "match": {
+              "location": "tests/steps/login-fail.steps.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 372463827
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "User enter the username as \"test1@gmail.com\"",
+            "match": {
+              "location": "tests/steps/login-fail.steps.ts:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 152500992
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 9,
+            "name": "User enter the password as \"password123\"",
+            "match": {
+              "location": "tests/steps/login-fail.steps.ts:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 52367281
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 10,
+            "name": "User click on the login button",
+            "match": {
+              "location": "tests/steps/login-fail.steps.ts:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2107553235
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "But ",
+            "line": 11,
+            "name": "Login should be failed",
+            "match": {
+              "location": "tests/steps/login-fail.steps.ts:28"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 16188113
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 199584727
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "user-authentication-login-fail;login-should-not-be-success",
+        "keyword": "Scenario Outline",
+        "line": 16,
+        "name": "Login should not be success",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 137463294
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "User navigates to the application",
+            "match": {
+              "location": "tests/steps/login-fail.steps.ts:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 471085580
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 5,
+            "name": "User click on the sign in button",
+            "match": {
+              "location": "tests/steps/login-fail.steps.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 329139400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "User enter the username as \"test2@gmail.com\"",
+            "match": {
+              "location": "tests/steps/login-fail.steps.ts:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 94867856
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 9,
+            "name": "User enter the password as \"32112312312\"",
+            "match": {
+              "location": "tests/steps/login-fail.steps.ts:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 72383138
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 10,
+            "name": "User click on the login button",
+            "match": {
+              "location": "tests/steps/login-fail.steps.ts:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2108739247
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "But ",
+            "line": 11,
+            "name": "Login should be failed",
+            "match": {
+              "location": "tests/steps/login-fail.steps.ts:28"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 14900372
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 185688222
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "user-authentication-login-fail",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "User Authentication login fail",
+    "tags": [],
+    "uri": "tests/features/login-fail.feature"
+  }
+]
