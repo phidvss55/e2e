@@ -9,7 +9,7 @@ on:
       #   required: true
       # default: 'BKM5-346'
       ENVIRONMENT:
-        description: 'ENVIRONMENT: TEST or STG'
+        description: 'ENVIRONMENT: dev, test or stg'
         required: true
         default: 'test'
     # pull_request:
@@ -53,9 +53,12 @@ jobs:
         with:
           # name: report-and-videos
           # path: reports
-          name: test-results
-          path: test-results/
+          name: report-assets
+          path: test-results
           retention-days: 2
+
+      - name: Generate report
+        run: pnpm run generate:report
 
       - name: Rename Report to index.html
         if: always()
